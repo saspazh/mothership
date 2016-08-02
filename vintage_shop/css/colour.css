@@ -1,0 +1,63 @@
+.cart-top {
+	background: url(../images/tagbottom.png) no-repeat bottom center #3f3f3f;
+}
+
+#main-menu li.current_page_item a, #main-menu li a:hover, #main-menu li.sfHover a,
+.tag-title-large {
+	background: #3f3f3f;
+}
+
+#main-menu li.current_page_item a, 
+#main-menu li a:hover, 
+#main-menu li.sfHover a,
+#main-menu,
+#main-menu li:last-child a:hover {
+	border-color: #3f3f3f;
+}
+
+#site-title, #site-title a {
+	color: #3f3f3f;
+}
+
+#main-menu li.current_page_item a:before,
+#main-menu li a:hover:before,
+#main-menu li.sfHover a:before {
+	border-color: #3f3f3f transparent transparent transparent;
+}
+
+.tag-title-large:before {
+	border-color: #3f3f3f transparent #3f3f3f transparent;
+}
+
+#twitter_icon:hover, #facebook_icon:hover, #googleplus_icon:hover, #skype_icon:hover, #instagram_icon:hover, #linkedin_icon:hover, #vimeo_icon:hover, #youtube_icon:hover, #rss_icon:hover {
+	background-color: #3f3f3f;
+}
+
+.tag-title-small {
+	background: #3f3f3f;
+}
+
+.tag-title-small:before {
+	border-color: #3f3f3f transparent #3f3f3f transparent;
+}
+
+.flex-caption p {
+	background: rgba(63, 63, 63, 0.7);
+}
+
+/* Main colour in format for IE, "703f3f3f" is the colour #3f3f3f, the "70" added to the front gives 70% */
+.ie8 .flex-caption p {
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#703f3f3f,endColorstr=#703f3f3f);
+}
+
+.flex-direction-nav .flex-prev, .flex-direction-nav .flex-next {
+	background: url(../images/slide-arrows.png) #3f3f3f no-repeat;
+}
+
+.flex-direction-nav .flex-prev {
+	background-position: 7px 6px;
+}
+
+.flex-direction-nav .flex-next {
+	background-position: -51px 6px;
+}

@@ -1,0 +1,68 @@
+<?php
+if($this->session->flashdata('message')){
+echo "
+<div class='alert error'><span class='hide'></span><strong></strong>" .$this->session->flashdata('message')."</div>";
+}
+?>
+
+          
+          
+        <form method="post" action="<? echo site_url()?>/stok_supervisor/edit_stok_supervisor" class="form" id="form">
+            
+            <fieldset>
+                <legend>Entry barang</legend>
+
+                    <input type="hidden" style="width: 30%;" id="50" name="id_stok" value="<? echo $db->id_stok?>" class="text">
+                     
+
+                    <p class="inline-small-label">
+                      <label for="field5">Barang *</label>
+                        <select name="id_barang" style="width:30%">
+                        	<?php
+							$username=$this->session->userdata('username');
+
+							$asd = $this->db->query("SELECT a.id_barang, a.nama_barang, b.nama_brand
+FROM  `barang` a, brand b Where a.id_brand = b.id_brand")->result();
+							foreach($asd as $dsa){
+
+							?>
+                            <option value="<?php echo $dsa->id_barang; ?>" <?if($dsa->id_barang == $db->id_barang){?> selected <?}?>><?php echo $dsa->nama_brand.' ('.$dsa->nama_barang.')'; ?></option>
+                            <?php } ?>
+						</select>
+                    </p>
+					<p class="inline-small-label">
+                      <label for="field5">Area *</label>
+                        <select name="id_area" style="width:30%">
+                        	<?php
+							$username=$this->session->userdata('username');
+
+							$asd = $this->db->query("SELECT id_area_sedang, nama_area_sedang
+FROM  `area_sedang` ")->result();
+							foreach($asd as $dsa){
+
+							?>
+                            <option value="<?php echo $dsa->id_area_sedang; ?>" <?if($dsa->id_area_sedang == $db->id_area){?> selected <?}?>><?php echo $dsa->nama_area_sedang; ?></option>
+                            <?php } ?>
+						</select>
+                    </p>
+					<p class="inline-small-label">
+                      <label for="field5">Serial *</label>
+                        <input type="text" style="width: 50%;" name="serial" value="<? echo $db->serial?>" class="text">
+                    </p>
+                   
+                   <p class="inline-small-label">
+                        <label for="field5">* Wajib diisi</label></p>    
+
+            </fieldset>
+          <? if( validation_errors()){
+                             echo "<div class='alert error' ><span class='hide'>x</span><strong></strong>" . validation_errors()."</div>";
+
+                            }
+                        ?>
+            <div class="block-actions">
+                <ul class="actions-left">
+                    <li><a href="<? echo site_url()?>/stok_supervisor/v" class="close-toolbox button red">Cancel</a></li> </ul>
+                <ul class="actions-right"> <input type="submit" class="close-toolbox button" value="Simpan"> </ul>
+            </div>
+        </form>
+
